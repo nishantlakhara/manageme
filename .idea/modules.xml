@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/webserver/articlesweb/articlesweb.iml" filepath="$PROJECT_DIR$/webserver/articlesweb/articlesweb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/manageme.iml" filepath="$PROJECT_DIR$/manageme.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webserver/profileweb/profileweb.iml" filepath="$PROJECT_DIR$/webserver/profileweb/profileweb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/restserver/restserver.iml" filepath="$PROJECT_DIR$/restserver/restserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webserver/webmain/webmain.iml" filepath="$PROJECT_DIR$/webserver/webmain/webmain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webserver/webserver.iml" filepath="$PROJECT_DIR$/webserver/webserver.iml" />
+    </modules>
+  </component>
+</project>
