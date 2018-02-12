@@ -1,0 +1,19 @@
+Run RestApplication.java class
+
+Sample requests
+http://localhost:8081/SpringBootRestApi/api/user/
+http://localhost:8081/SpringBootRestApi/api/user/1
+
+Mapping details:
+Mapped "{[/api/user/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<?> com.restapi.controller.RestApiController.getUser(long)
+2018-02-12 22:46:30.525  INFO 811 --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.restapi.model.User>> com.restapi.controller.RestApiController.listAllUsers()
+2018-02-12 22:46:30.526  INFO 811 --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> com.restapi.controller.RestApiController.createUser(com.restapi.model.User,org.springframework.web.util.UriComponentsBuilder)
+2018-02-12 22:46:30.527  INFO 811 --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/{id}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<?> com.restapi.controller.RestApiController.updateUser(long,com.restapi.model.User)
+2018-02-12 22:46:30.528  INFO 811 --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<?> com.restapi.controller.RestApiController.deleteUser(long)
+2018-02-12 22:46:30.529  INFO 811 --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/user/],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<com.restapi.model.User> com.restapi.controller.RestApiController.deleteAllUsers()
+2018-02-12 22:46:30.536  INFO 811 --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-02-12 22:46:30.537  INFO 811 --- [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-02-12 22:46:30.601  INFO 811 --- [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-02-12 22:46:30.601  INFO 811 --- [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-02-12 22:46:30.686  INFO 811 --- [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-02-12 22:46:30.990  INFO 811 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       :
