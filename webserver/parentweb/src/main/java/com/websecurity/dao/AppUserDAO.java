@@ -34,5 +34,15 @@ public class AppUserDAO extends JdbcDaoSupport {
         }
     }
 
+    public int insert(AppUser user) {
+        String sql = AppUserMapper.INSERT_SQL + "( ?, ?, ? )";
+
+        Object[] params = new Object[] { user.getUserName(), user.getEncryptedPassword(), 1 };
+
+        int row = this.getJdbcTemplate().update(sql, params);
+        System.out.println("Rows inserted : " + row);
+        return row;
+    }
+
 }
 

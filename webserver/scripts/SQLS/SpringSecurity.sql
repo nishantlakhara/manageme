@@ -52,3 +52,6 @@ insert into app_role (ROLE_ID, ROLE_NAME) values (2, 'ROLE_USER');
 insert into user_role (ID, USER_ID, ROLE_ID) values (1, 1, 1);
 insert into user_role (ID, USER_ID, ROLE_ID) values (2, 1, 2);
 insert into user_role (ID, USER_ID, ROLE_ID) values (3, 2, 2);
+
+
+ALTER TABLE `APP_USER` CHANGE `USER_ID` `USER_ID` BIGINT NOT NULL AUTO_INCREMENT;

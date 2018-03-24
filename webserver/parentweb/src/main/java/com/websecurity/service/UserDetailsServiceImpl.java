@@ -6,6 +6,9 @@ import java.util.List;
 import com.websecurity.dao.AppRoleDAO;
 import com.websecurity.dao.AppUserDAO;
 import com.websecurity.models.AppUser;
+import com.websecurity.models.AppUserDto;
+import com.websecurity.utils.EncryptedPasswordUtils;
+import com.websecurity.error.UsernameAlreadyExistsException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -26,7 +29,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
-        AppUser appUser = this.appUserDAO.findUserAccount(userName);
+        AppUser appUser = findUserByUserName(userName);
 
         if (appUser == null) {
             System.out.println("User not found! " + userName);
@@ -48,9 +51,35 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         }
 
         UserDetails userDetails = (UserDetails) new User(appUser.getUserName(), //
-                appUser.getEncrytedPassword(), grantList);
+                appUser.getEncryptedPassword(), grantList);
 
         return userDetails;
     }
 
+    private AppUser findUserByUserName(String userName) {
+        AppUser appUser = this.appUserDAO.findUserAccount(userName);
+        if (appUser != null) {
+            return appUser;
+        }
+        return null;
+    }
+
+
+    public AppUser registerNewUserAccount(AppUserDto appUserDto)
+            throws UsernameAlreadyExistsException {
+
+        if(findUserByUserName(appUserDto.getUserName()) != null) {
+            throw new UsernameAlreadyExistsException(
+                    "There is an account with username: " + appUserDto.getUserName());
+        }
+
+        AppUser appUser = new AppUser();
+        appUser.setUserName(appUserDto.getUserName());
+        appUser.setEncryptedPassword(EncryptedPasswordUtils.encrytePassword(appUserDto.getPassword()));
+        appUser.setFirstName(appUserDto.getFirstName());
+        appUser.setLastName(appUserDto.getLastName());
+        appUser.setEmail(appUserDto.getEmail());
+
+        return appUser;
+    }
 }
